@@ -1,11 +1,13 @@
+import java.util.List;
 import java.util.Optional;
 
 /**
- * A node is a data structure which can store a value and a next pointer
+ * A node is a data structure which can store a value and a/many next pointer(s)
  * @param <ValueType> Type of the value this node can store
- * @param <NextPointerDataType> Data-Type of the next-pointer
+ * @param <NextPointerDataType> Data-Type of the next-pointer(s)
  */
-public interface Node<ValueType, NextPointerDataType> {
+public interface Node<ValueType, NextPointerDataType>
+{
     /**
      * Get the value stored within this node
      * @return stored value
@@ -13,14 +15,27 @@ public interface Node<ValueType, NextPointerDataType> {
     ValueType getValue();
 
     /**
-     * Get the next address to be looked into
-     * @return next reference
+     * All next references -> n=this node's children
+     * @return a list of alll the next references
+     */
+    List<NextPointerDataType> getChildren();
+
+    /**
+     * Get the nth child of this self-referential data-structure
+     * @param childNumber the child to be returned
+     * @return self-referential child node
+     */
+    NextPointerDataType getChild(int childNumber);
+
+    /**
+     * As a self-referential node can have multiple children hence returning zeroth index child looks good for now
+     * @return the zeroth index child
      */
     NextPointerDataType getNext();
 
     /**
-     * The next reference could/couldn't hold a value, this method gives a concrete answer whether any next element can be iterated upon
-     * @return is the next reference null?
+     * Whether next-pointers have any values
+     * @return if next pointers have non-null values
      */
     boolean hasNext();
 
