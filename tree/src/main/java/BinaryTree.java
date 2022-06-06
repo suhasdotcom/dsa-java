@@ -1,4 +1,4 @@
-public interface BinaryTree
+public interface BinaryTree<T> extends Tree<BinaryNode<T>>
 {
 
 }
