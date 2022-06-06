@@ -1,11 +1,5 @@
-public interface BinaryNode <T>
+public interface BinaryNode <T> extends SelfReferentialNode<T>
 {
-    /**
-     * Get the value stored withing this binary node
-     * @return stored value
-     */
-    T getValue();
-
     /**
      * Get the right chile of this binary node
      * @return right child
