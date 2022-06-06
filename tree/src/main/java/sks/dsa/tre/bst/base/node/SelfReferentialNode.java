@@ -1,4 +1,4 @@
-import java.util.Objects;
+package sks.dsa.tre.bst.base.node;
 
 /**
  * An interface which specifies having a/many next reference(s) that could point to another self-type node
