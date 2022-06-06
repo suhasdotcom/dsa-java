@@ -1,2 +1,4 @@
-public interface BinaryTree {
+public interface BinaryTree
+{
+
 }
