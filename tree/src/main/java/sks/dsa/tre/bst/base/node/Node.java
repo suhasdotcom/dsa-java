@@ -46,4 +46,10 @@ public interface Node<ValueType, NextPointerDataType>
      * @return Optional Next-Reference
      */
     Optional<NextPointerDataType> getOptionalNext();
+
+    /**
+     * As node can store many next pointers hence this is a queryable method for the maximum number of next pointers
+     * @return maximum number of next pointers
+     */
+    int maxNumberOfNextPointers();
 }
