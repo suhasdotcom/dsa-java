@@ -29,4 +29,10 @@ public interface BinaryNode <T> extends SelfReferentialNode<T>
      * @return all present children
      */
     int numberOfNonNullChildren();
+
+    /**
+     * Get height of this particular node in the tree
+     * @return height of htis node in the tree
+     */
+    int getHeight();
 }
