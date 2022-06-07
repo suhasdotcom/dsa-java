@@ -1,8 +1,10 @@
 package sks.dsa.tree.bst.base.tree;
 
-public interface Tree<T> extends Iterable<T>
+import sks.dsa.tree.bst.base.node.Node;
+
+public interface Tree<NodeType extends Node<?, ? extends Node<?, ?>>> extends Iterable<NodeType>
 {
-    T getRoot();
+    NodeType getRoot();
     int getMaxTreeDepth();
     int getMaxTreeHeight();
     int getNumberOfChildren();
