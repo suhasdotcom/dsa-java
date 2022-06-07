@@ -1,4 +1,4 @@
-package sks.dsa.tre.bst.base.node;
+package sks.dsa.tree.bst.base.node;
 
 /**
  * A self-referential node which can contain max two children

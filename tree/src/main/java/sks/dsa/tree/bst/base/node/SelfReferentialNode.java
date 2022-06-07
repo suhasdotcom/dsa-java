@@ -1,4 +1,4 @@
-package sks.dsa.tre.bst.base.node;
+package sks.dsa.tree.bst.base.node;
 
 /**
  * An interface which specifies having a/many next reference(s) that could point to another self-type node

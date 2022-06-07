@@ -1,4 +1,4 @@
-package sks.dsa.tre.bst.base.node;
+package sks.dsa.tree.bst.base.node;
 
 import java.util.List;
 import java.util.Optional;
