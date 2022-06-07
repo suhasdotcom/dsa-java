@@ -17,4 +17,16 @@ public interface BinaryTree<T> extends Tree<BinaryNode<T>>
      * @return is thi a complete binary tree
      */
     boolean isTreeComplete();
+
+    /**
+     *
+     * @return right subtree of a binary tree
+     */
+    BinaryTree<T> getRightSubTree();
+
+    /**
+     *
+     * @return left subtree of a binary tree
+     */
+    BinaryTree<T> getLeftSubTree();
 }
