@@ -1,6 +1,7 @@
-package sks.dsa.tree.bst.base.tree;
+package sks.dsa.tree.bst.base.tree.binaryTree;
 
-import sks.dsa.tree.bst.base.node.BinaryNode;
+import sks.dsa.tree.bst.base.node.binaryTree.BinaryNode;
+import sks.dsa.tree.bst.base.tree.Tree;
 
 /**
  * A tree with max two children per node.

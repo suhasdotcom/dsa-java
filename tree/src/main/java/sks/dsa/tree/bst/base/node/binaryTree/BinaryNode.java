@@ -1,4 +1,6 @@
-package sks.dsa.tree.bst.base.node;
+package sks.dsa.tree.bst.base.node.binaryTree;
+
+import sks.dsa.tree.bst.base.node.SelfReferentialNode;
 
 /**
  * A self-referential node which can contain max two children

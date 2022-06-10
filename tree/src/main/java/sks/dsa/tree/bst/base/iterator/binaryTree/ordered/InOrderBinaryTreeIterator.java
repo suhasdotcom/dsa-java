@@ -1,10 +1,11 @@
-package sks.dsa.tree.bst.base.iterator.ordered;
+package sks.dsa.tree.bst.base.iterator.binaryTree.ordered;
 
-import sks.dsa.tree.bst.base.iterator.BinaryTreeIterator;
-import sks.dsa.tree.bst.base.node.BinaryNode;
-import sks.dsa.tree.bst.base.tree.BinaryTree;
+import sks.dsa.tree.bst.base.iterator.binaryTree.BinaryTreeIterator;
+import sks.dsa.tree.bst.base.node.binaryTree.BinaryNode;
+import sks.dsa.tree.bst.base.tree.binaryTree.BinaryTree;
 
-public class InOrderBinaryTreeIterator <ValueType> implements BinaryTreeIterator<ValueType>
+public class InOrderBinaryTreeIterator <ValueType>
+        implements BinaryTreeIterator<ValueType>
 {
 
     @Override
