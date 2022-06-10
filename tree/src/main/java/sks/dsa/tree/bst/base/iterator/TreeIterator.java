@@ -1,6 +1,5 @@
 package sks.dsa.tree.bst.base.iterator;
 
-import sks.dsa.tree.bst.base.node.Node;
 import sks.dsa.tree.bst.base.node.SelfReferentialNode;
 import sks.dsa.tree.bst.base.tree.Tree;
 
@@ -13,4 +12,6 @@ public interface TreeIterator<ValueType,
 {
     NodeType getRoot();
     int size();
+
+    TreeType getTree();
 }
