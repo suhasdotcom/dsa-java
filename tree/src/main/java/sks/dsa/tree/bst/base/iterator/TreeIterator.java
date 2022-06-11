@@ -14,4 +14,9 @@ public interface TreeIterator<ValueType,
     int size();
 
     TreeType getTree();
+
+    void buildTreeFromSequence(final ValueType[] values);
+    void buildTreeFromSequence(final NodeType [] nodes);
+    void buildTreeFromSequence(final Collection<ValueType> values);
+    void buildTreeFromSequence(final List<NodeType> nodes);
 }
