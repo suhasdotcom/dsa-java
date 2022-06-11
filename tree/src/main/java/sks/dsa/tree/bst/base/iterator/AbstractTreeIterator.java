@@ -1,6 +1,7 @@
 package sks.dsa.tree.bst.base.iterator;
 
 import sks.dsa.tree.bst.base.node.SelfReferentialNode;
+import sks.dsa.tree.bst.base.node.binaryTree.BinaryNode;
 import sks.dsa.tree.bst.base.tree.Tree;
 
 public abstract class AbstractTreeIterator <ValueType,
@@ -18,5 +19,15 @@ public abstract class AbstractTreeIterator <ValueType,
     @Override
     public TreeType getTree() {
         return this.tree;
+    }
+
+    @Override
+    public NodeType getRoot() {
+        return getTree().getRoot();
+    }
+
+    @Override
+    public int size() {
+        return getTree().size();
     }
 }

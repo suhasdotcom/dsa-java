@@ -9,14 +9,4 @@ public abstract class AbstractBinaryTreeIterator<ValueType> extends AbstractTree
     public AbstractBinaryTreeIterator(final BinaryTree<ValueType> tree) {
         super(tree);
     }
-
-    @Override
-    public BinaryNode<ValueType> getRoot() {
-        return getTree().getRoot();
-    }
-
-    @Override
-    public int size() {
-        return getTree().size();
-    }
 }
