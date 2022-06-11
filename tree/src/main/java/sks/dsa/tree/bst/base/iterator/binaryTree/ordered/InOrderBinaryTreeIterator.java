@@ -39,7 +39,7 @@ public class InOrderBinaryTreeIterator <ValueType>
         iterateInOrder(theNode.getRightChild());
     }
 
-    private void assignCurrentNodeAndIncrementCurrentPosition(BinaryNode<ValueType> theNode) {
+    private void assignCurrentNodeAndIncrementCurrentPosition(final BinaryNode<ValueType> theNode) {
         currentNode = theNode;
         position++;
     }
