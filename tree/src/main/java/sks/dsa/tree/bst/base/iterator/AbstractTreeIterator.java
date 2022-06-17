@@ -11,7 +11,7 @@ public abstract class AbstractTreeIterator <ValueType,
 {
     private final TreeType tree;
 
-    public AbstractTreeIterator(final TreeType tree)
+    public AbstractTreeIterator(TreeType tree)
     {
         this.tree = tree;
     }
