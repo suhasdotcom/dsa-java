@@ -2,11 +2,13 @@ package sks.dsa.tree.bst.base.iterator.binaryTree.ordered;
 
 import sks.dsa.tree.bst.base.iterator.binaryTree.AbstractBinaryTreeIterator;
 import sks.dsa.tree.bst.base.iterator.binaryTree.BinaryTreeIterator;
+import sks.dsa.tree.bst.base.node.SelfReferentialNode;
 import sks.dsa.tree.bst.base.node.binaryTree.BinaryNode;
 import sks.dsa.tree.bst.base.tree.binaryTree.BinaryTree;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Stack;
 
 public class InOrderBinaryTreeIterator <ValueType>
         extends AbstractBinaryTreeIterator<ValueType>
@@ -14,6 +16,8 @@ public class InOrderBinaryTreeIterator <ValueType>
 {
     private BinaryNode<ValueType> currentNode = getRoot();
     private int position = 0;
+
+    private final Stack<SelfReferentialNode<ValueType>> callUnwindStack = new Stack<>();    // takes O(lg(n)) space
 
     public InOrderBinaryTreeIterator(BinaryTree<ValueType> tree) {
         super(tree);
