@@ -21,6 +21,18 @@ public interface BinaryNode <T> extends SelfReferentialNode<T>
     BinaryNode<T> getLeftChild();
 
     /**
+     * Set the right chile of this binary node
+     * @param nextElement  right child
+     */
+     void setRightChild(final BinaryNode<T> nextElement);
+
+    /**
+     * Set the left child of this binary node
+     * @param nextElement left child
+     */
+     void setLeftChild(final BinaryNode<T> nextElement);
+
+    /**
      * Get the total number of children this tree can store
      * @return total number of children
      */
