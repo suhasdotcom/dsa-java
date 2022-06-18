@@ -36,6 +36,19 @@ public interface Node<ValueType, NextPointerDataType>
     NextPointerDataType getNext();
 
     /**
+     * Set the nth child of this self-referential data-structure
+     * @param childNumber the child to be returned
+     * @param nextElement self-referential child node
+     */
+     void setChild(int childNumber, final NextPointerDataType nextElement);
+
+    /**
+     * As a self-referential node can have multiple children hence providing setter for zeroth index child looks good for now
+     * @param nextElement the zeroth index child
+     */
+     void setNext(final NextPointerDataType nextElement);
+
+    /**
      * Whether next-pointers have any values
      * @return if next pointers have non-null values
      */
