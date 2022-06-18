@@ -45,7 +45,9 @@ public interface Node<ValueType, NextPointerDataType>
      * Provide optional results for next operation
      * @return Optional Next-Reference
      */
-    Optional<NextPointerDataType> getOptionalNext();
+    default Optional<? extends NextPointerDataType> getOptionalNext() {
+        return Optional.ofNullable(getNext());
+    }
 
     /**
      * As node can store many next pointers hence this is a queryable method for the maximum number of next pointers
