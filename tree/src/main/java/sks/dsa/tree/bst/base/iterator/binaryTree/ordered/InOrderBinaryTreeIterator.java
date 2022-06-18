@@ -2,7 +2,6 @@ package sks.dsa.tree.bst.base.iterator.binaryTree.ordered;
 
 import sks.dsa.tree.bst.base.iterator.binaryTree.AbstractBinaryTreeIterator;
 import sks.dsa.tree.bst.base.iterator.binaryTree.BinaryTreeIterator;
-import sks.dsa.tree.bst.base.node.SelfReferentialNode;
 import sks.dsa.tree.bst.base.node.binaryTree.BinaryNode;
 import sks.dsa.tree.bst.base.tree.binaryTree.BinaryTree;
 
@@ -16,6 +15,7 @@ public class InOrderBinaryTreeIterator <ValueType>
 {
     private BinaryNode<ValueType> currentNode = getRoot();
     private int position = 0;
+    private boolean thisIsTheFirstIteration = true;
 
     private final Stack<BinaryNode<ValueType>> callUnwindStack = new Stack<>();    // takes O(lg(h)) space
 
@@ -30,24 +30,15 @@ public class InOrderBinaryTreeIterator <ValueType>
 
     @Override
     public BinaryNode<ValueType> next() {
-        iterateInOrder(currentNode);
+        if(thisIsTheFirstIteration) {
+            insertLeftChildrenInStack(currentNode, callUnwindStack);
+            thisIsTheFirstIteration = false;
+        }
+        currentNode = callUnwindStack.pop();
+        insertLeftChildrenInStack(currentNode.getRightChild(), callUnwindStack);
+        position++;
         return currentNode;
     }
-
-    private void iterateInOrder(BinaryNode<ValueType> theNode)
-    {
-        if(theNode == null)
-            return;
-        iterateInOrder(theNode.getLeftChild());
-        assignCurrentNodeAndIncrementCurrentPosition(theNode);
-        iterateInOrder(theNode.getRightChild());
-    }
-
-    private void assignCurrentNodeAndIncrementCurrentPosition(final BinaryNode<ValueType> theNode) {
-        currentNode = theNode;
-        position++;
-    }
-
 
     @Override
     public void buildTreeFromSequence(final ValueType[] values) {
@@ -67,5 +58,13 @@ public class InOrderBinaryTreeIterator <ValueType>
     @Override
     public void buildTreeFromSequence(List<BinaryNode<ValueType>> nodes) {
 
+    }
+
+    protected void insertLeftChildrenInStack(BinaryNode<ValueType> node,
+                                             Stack<BinaryNode<ValueType>> unwindStack) {
+        if(node == null)
+            return;
+        unwindStack.push(node);
+        insertLeftChildrenInStack(node.getLeftChild(), unwindStack);
     }
 }
