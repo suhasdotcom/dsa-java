@@ -17,7 +17,7 @@ public class InOrderBinaryTreeIterator <ValueType>
     private BinaryNode<ValueType> currentNode = getRoot();
     private int position = 0;
 
-    private final Stack<SelfReferentialNode<ValueType>> callUnwindStack = new Stack<>();    // takes O(lg(n)) space
+    private final Stack<BinaryNode<ValueType>> callUnwindStack = new Stack<>();    // takes O(lg(h)) space
 
     public InOrderBinaryTreeIterator(BinaryTree<ValueType> tree) {
         super(tree);
