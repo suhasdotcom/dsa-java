@@ -20,7 +20,7 @@ public interface Node<ValueType, NextPointerDataType>
      * All next references -> n=this node's children
      * @return a list of alll the next references
      */
-    List<NextPointerDataType> getChildren();
+    List<? extends NextPointerDataType> getChildren();
 
     /**
      * Get the nth child of this self-referential data-structure
