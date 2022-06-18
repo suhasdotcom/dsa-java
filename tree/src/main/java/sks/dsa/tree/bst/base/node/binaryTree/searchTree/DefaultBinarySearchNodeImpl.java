@@ -66,12 +66,12 @@ public class DefaultBinarySearchNodeImpl<ValueType extends Comparable<ValueType>
     }
 
     @Override
-    public BinaryNode<ValueType> getRightChild() {
+    public BinarySearchNode<ValueType> getRightChild() {
         return this.right;
     }
 
     @Override
-    public BinaryNode<ValueType> getLeftChild() {
+    public BinarySearchNode<ValueType> getLeftChild() {
         return this.left;
     }
 
