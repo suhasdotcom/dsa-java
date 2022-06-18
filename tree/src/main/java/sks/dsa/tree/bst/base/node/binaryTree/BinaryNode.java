@@ -27,10 +27,10 @@ public interface BinaryNode <T> extends SelfReferentialNode<T>
     int numberOfChildren();
 
     /**
-     * Total number of non-null children
+     * Total number of non-null immediate children
      * @return all present children
      */
-    int numberOfNonNullChildren();
+    int numberOfNonNullImmediateChildren();
 
     /**
      * Get height of this particular node in the tree
