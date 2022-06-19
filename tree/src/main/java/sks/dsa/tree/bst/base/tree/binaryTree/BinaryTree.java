@@ -15,7 +15,7 @@ public interface BinaryTree<T> extends Tree<T, BinaryNode<T>>
     boolean isTreeBalanced();
 
     /**
-     * @return is thi a complete binary tree
+     * @return is this a complete binary tree
      */
     boolean isTreeComplete();
 
