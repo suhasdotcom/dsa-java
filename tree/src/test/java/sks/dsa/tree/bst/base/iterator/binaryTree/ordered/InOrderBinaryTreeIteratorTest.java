@@ -1,16 +1,11 @@
 package sks.dsa.tree.bst.base.iterator.binaryTree.ordered;
 
 import org.junit.jupiter.api.Test;
-import sks.dsa.tree.bst.base.iterator.binaryTree.BinaryTreeIterator;
 import sks.dsa.tree.bst.base.node.binaryTree.BinaryNode;
 import sks.dsa.tree.bst.base.node.binaryTree.searchTree.BinarySearchNode;
 import sks.dsa.tree.bst.base.node.binaryTree.searchTree.DefaultBinarySearchNodeImpl;
 import sks.dsa.tree.bst.base.tree.binaryTree.searchTree.BinarySearchTree;
 import sks.dsa.tree.bst.base.tree.binaryTree.searchTree.DefaultBinarySearchTreeImpl;
-
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class InOrderBinaryTreeIteratorTest {
     @Test
@@ -36,5 +31,7 @@ class InOrderBinaryTreeIteratorTest {
         BinarySearchTree<Integer> integerBinarySearchTree = new DefaultBinarySearchTreeImpl<>(rootNode);
         for(BinaryNode<Integer> n: integerBinarySearchTree)
             System.out.println(n.getValue());
+
+        integerBinarySearchTree.forEach(e -> System.out.println(e.getValue()));
     }
 }
