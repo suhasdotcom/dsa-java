@@ -49,4 +49,32 @@ class DefaultBinarySearchNodeImplTest
         assertEquals(2, rightNode.numberOfChildren());
         assertEquals(6, rootNode.numberOfChildren());
     }
+
+    @Test
+    public void testForNextChildrenPropertiesAndHeights()
+    {
+        BinarySearchNode<Integer> rootNode = new DefaultBinarySearchNodeImpl<>(4);
+        BinarySearchNode<Integer> leftNode = new DefaultBinarySearchNodeImpl<>(2);
+        BinarySearchNode<Integer> leftLeftNode = new DefaultBinarySearchNodeImpl<>(1);
+        BinarySearchNode<Integer> leftRightNode = new DefaultBinarySearchNodeImpl<>(3);
+
+        rootNode.setLeftChild(leftNode);
+        leftNode.setLeftChild(leftLeftNode);
+        leftNode.setRightChild(leftRightNode);
+
+        BinarySearchNode<Integer> rightNode = new DefaultBinarySearchNodeImpl<>(6);
+        BinarySearchNode<Integer> rightLeftNode = new DefaultBinarySearchNodeImpl<>(5);
+
+        rootNode.setRightChild(rightNode);
+        rightNode.setLeftChild(rightLeftNode);
+
+        assertEquals(3, rootNode.getHeight());
+        assertEquals(2, rootNode.getRightChild().getHeight());
+
+        assertEquals(0, leftLeftNode.numberOfChildren());
+        assertEquals(0, leftRightNode.numberOfChildren());
+        assertEquals(2, leftNode.numberOfChildren());
+        assertEquals(1, rightNode.numberOfChildren());
+        assertEquals(5, rootNode.numberOfChildren());
+    }
 }
