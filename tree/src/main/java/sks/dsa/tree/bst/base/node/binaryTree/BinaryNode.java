@@ -1,4 +1,6 @@
-package sks.dsa.tre.bst.base.node;
+package sks.dsa.tree.bst.base.node.binaryTree;
+
+import sks.dsa.tree.bst.base.node.SelfReferentialNode;
 
 /**
  * A self-referential node which can contain max two children
@@ -19,16 +21,28 @@ public interface BinaryNode <T> extends SelfReferentialNode<T>
     BinaryNode<T> getLeftChild();
 
     /**
+     * Set the right chile of this binary node
+     * @param nextElement  right child
+     */
+     void setRightChild(final BinaryNode<T> nextElement);
+
+    /**
+     * Set the left child of this binary node
+     * @param nextElement left child
+     */
+     void setLeftChild(final BinaryNode<T> nextElement);
+
+    /**
      * Get the total number of children this tree can store
      * @return total number of children
      */
     int numberOfChildren();
 
     /**
-     * Total number of non-null children
+     * Total number of non-null immediate children
      * @return all present children
      */
-    int numberOfNonNullChildren();
+    int numberOfNonNullImmediateChildren();
 
     /**
      * Get height of this particular node in the tree
