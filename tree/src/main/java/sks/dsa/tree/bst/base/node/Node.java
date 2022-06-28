@@ -18,7 +18,7 @@ public interface Node<ValueType, NextPointerDataType>
 
     /**
      * All next references -> n=this node's children
-     * @return a list of alll the next references
+     * @return a list of all the next references
      */
     List<? extends NextPointerDataType> getChildren();
 
